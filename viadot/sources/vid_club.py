@@ -66,7 +66,7 @@ class VidClub(Source):
             ValidationError: If any source different than the ones in the list are used.
         """
         if source in ["jobs", "product", "company"]:
-            url = f"{api_url}{source}?from={from_date}&to={to_date}&region={region}&limit={items_per_page}"
+            url = f"{api_url}{source}?from={from_date}&to={to_date}&limit={items_per_page}"
         elif source == "survey":
             url = f"{api_url}{source}?language=en&type=question"
         else:
