@@ -190,14 +190,19 @@ class SharepointToADLS(Flow):
         return name.replace(" ", "_").lower()
 
 
+class NoDataReturnedError(Exception):
+    def __init__(self, message):
+        self.message = message
+
+
 @task(slug="check_df")
 def check_if_df_empty(df):
     if len(df.index) == 0:
         logger.info("No data in the response. Df empty")
 
         ## raise ENDRUN(state=Failed())
-        raise FAIL("DF IS EMPTY!")
-        # raise ValueError("DF IS EMPTY!")
+        # raise FAIL("DF IS EMPTY!")
+        # raise NoDataReturnedError("DF IS EMPTY!")
 
 
 class SharepointListToADLS(Flow):
