@@ -21,6 +21,7 @@ from viadot.task_utils import (
 from viadot.tasks import AzureDataLakeUpload
 from viadot.tasks.sharepoint import SharepointToDF, SharepointListToDF
 from prefect.engine.runner import ENDRUN
+from prefect.engine.results import LocalResult
 
 logger = logging.get_logger()
 
@@ -195,7 +196,7 @@ class NoDataReturnedError(Exception):
         self.message = message
 
 
-@task(slug="check_df")
+@task(slug="check_df", result=LocalResult(dir="./results"))
 def check_if_df_empty(df):
     if len(df.index) == 0:
         logger.info("No data in the response. Df empty")
