@@ -196,10 +196,10 @@ class NoDataReturnedError(Exception):
         self.message = message
 
 
-@task(slug="check_df", result=LocalResult(dir="./results"))
+@task(slug="check_df")
 def check_if_df_empty(df):
     if len(df.index) == 0:
-        logger.info("No data in the response. Df empty")
+        logger.warn("No data in the response. Df empty")
 
         ## raise ENDRUN(state=Failed())
         # raise FAIL("DF IS EMPTY!")
