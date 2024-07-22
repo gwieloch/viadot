@@ -3,10 +3,10 @@
 from typing import Any
 
 import pandas as pd
+from prefect import task
+
 from viadot.orchestration.prefect.utils import get_credentials
 from viadot.sources import CloudForCustomers
-
-from prefect import task
 
 
 @task(retries=3, retry_delay_seconds=10, timeout_seconds=60 * 60)
@@ -59,4 +59,5 @@ def cloud_for_customers_to_df(  # noqa: PLR0913, PLR0917
         credentials=credentials,
         config_key=config_key,
     )
-    return c4c.to_df(fields=fields, dtype=dtype, tests=tests, **kwargs)
+    # fields=fields, dtype=dtype, tests=tests,
+    return c4c.to_df(**kwargs)
