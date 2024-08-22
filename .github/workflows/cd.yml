@@ -33,7 +33,7 @@ jobs:
       - build-distribution
     runs-on: ubuntu-latest
     environment:
-      name: release
+      name: continuous_delivery
       url: https://pypi.org/p/viadot2
     permissions:
       id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
