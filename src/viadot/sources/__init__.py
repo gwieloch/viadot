@@ -8,13 +8,13 @@ from .epicor import Epicor
 from .exchange_rates import ExchangeRates
 from .genesys import Genesys
 from .hubspot import Hubspot
+from .mediatool import Mediatool
 from .mindful import Mindful
 from .outlook import Outlook
 from .sharepoint import Sharepoint
 from .sql_server import SQLServer
 from .trino import Trino
 from .uk_carbon_intensity import UKCarbonIntensity
-
 
 __all__ = [
     "CloudForCustomers",
@@ -23,6 +23,7 @@ __all__ = [
     "Genesys",
     "Outlook",
     "Hubspot",
+    "Mediatool",
     "Mindful",
     "Sharepoint",
     "Trino",
