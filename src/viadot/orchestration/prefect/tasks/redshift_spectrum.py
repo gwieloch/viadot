@@ -86,4 +86,4 @@ def df_to_redshift_spectrum(  # noqa: PLR0913
     )
 
     logger = get_run_logger()
-    logger.info("Data has been uploaded successfully.")
+    logger.info("Data has been uploaded successfully using new GITHUBSTORAGE.")
