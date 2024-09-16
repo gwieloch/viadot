@@ -42,6 +42,7 @@ def handle_api_request(
     timeout: tuple = (3.05, 60 * 30),
     method: Literal["GET", "POST", "DELETE"] = "GET",
     data: str | None = None,
+    verify: bool = True,
 ) -> requests.Response:
     """Send an HTTP request to the specified URL using the provided parameters.
 
@@ -58,6 +59,7 @@ def handle_api_request(
         method (Literal["GET", "POST", "DELETE"], optional): The HTTP method to use for
             the request. Defaults to "GET".
         data (str, optional): The request body data as a string. Defaults to None.
+        verify (bool, optional): Whether to verify cerificates. Defaults to True.
 
     Returns:
         requests.Response: The HTTP response object.
@@ -82,6 +84,7 @@ def handle_api_request(
         headers=headers,
         timeout=timeout,
         data=data,
+        verify=verify
     )
 
 
@@ -121,6 +124,7 @@ def handle_api_response(
     timeout: tuple = (3.05, 60 * 30),
     method: Literal["GET", "POST", "DELETE"] = "GET",
     data: str | None = None,
+    verify: bool = True,
 ) -> requests.models.Response:
     """Handle an HTTP response.
 
@@ -137,6 +141,7 @@ def handle_api_response(
         timeout (tuple, optional): A tuple of (connect_timeout, read_timeout) in
             seconds. Defaults to (3.05, 60 * 30).
         data (str, optional): The request body data as a string. Defaults to None.
+        verify (bool, optional): Whether to verify cerificates. Defaults to True.
 
     Raises:
         ReadTimeout: Stop waiting for a response after `timeout` seconds.
@@ -155,6 +160,7 @@ def handle_api_response(
         timeout=timeout,
         method=method,
         data=data,
+        verify=verify
     )
 
     return _handle_response(response)
