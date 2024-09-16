@@ -18,7 +18,7 @@ def sap_to_redshift_spectrum(  # noqa: PLR0913
     schema_name: str,
     table: str,
     extension: str = ".parquet",
-    if_exists: Literal["overwrite", "append"] = "overwrite",
+    if_exists: Literal["overwrite", "append"] = "append",
     partition_cols: list[str] | None = None,
     index: bool = False,
     compression: str | None = None,
