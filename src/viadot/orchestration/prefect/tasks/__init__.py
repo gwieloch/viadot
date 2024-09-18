@@ -2,6 +2,7 @@
 
 from .adls import adls_upload, df_to_adls
 from .bcp import bcp
+from .business_core import business_core_to_df
 from .cloud_for_customers import cloud_for_customers_to_df
 from .databricks import df_to_databricks
 from .dbt import dbt_task
@@ -29,6 +30,7 @@ __all__ = [
     "adls_upload",
     "df_to_adls",
     "bcp",
+    "business_core_to_df",
     "cloud_for_customers_to_df",
     "df_to_databricks",
     "dbt_task",

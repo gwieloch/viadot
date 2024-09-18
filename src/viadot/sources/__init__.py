@@ -2,6 +2,7 @@
 
 from importlib.util import find_spec
 
+from .business_core import BusinessCore
 from .cloud_for_customers import CloudForCustomers
 from .duckdb import DuckDB
 from .epicor import Epicor
@@ -17,6 +18,7 @@ from .uk_carbon_intensity import UKCarbonIntensity
 
 
 __all__ = [
+    "BusinessCore",
     "CloudForCustomers",
     "Epicor",
     "ExchangeRates",
