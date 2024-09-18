@@ -13,9 +13,10 @@ from .sharepoint import Sharepoint
 from .sql_server import SQLServer
 from .trino import Trino
 from .uk_carbon_intensity import UKCarbonIntensity
-
+from .azure_sql import AzureSQL
 
 __all__ = [
+    "AzureSQL",
     "CloudForCustomers",
     "ExchangeRates",
     "Genesys",

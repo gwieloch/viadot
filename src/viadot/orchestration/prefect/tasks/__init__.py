@@ -1,5 +1,6 @@
 """Imports."""
 
+from .aselite import aselite_to_df
 from .adls import adls_upload, df_to_adls
 from .bcp import bcp
 from .cloud_for_customers import cloud_for_customers_to_df
@@ -25,6 +26,7 @@ from .sql_server import create_sql_server_table, sql_server_query, sql_server_to
 
 
 __all__ = [
+    "aselite_to_df",
     "adls_upload",
     "df_to_adls",
     "bcp",
