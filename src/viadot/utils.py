@@ -84,7 +84,7 @@ def handle_api_request(
         headers=headers,
         timeout=timeout,
         data=data,
-        verify=verify
+        verify=verify,
     )
 
 
@@ -160,7 +160,7 @@ def handle_api_response(
         timeout=timeout,
         method=method,
         data=data,
-        verify=verify
+        verify=verify,
     )
 
     return _handle_response(response)
