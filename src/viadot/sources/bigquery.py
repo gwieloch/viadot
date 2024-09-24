@@ -27,9 +27,9 @@ class BigQueryCredentials(BaseModel):
     private_key: str
     client_email: str
     client_id: str
-    auth_uri: str
-    token_uri: str
-    auth_provider_x509_cert_url: str
+    auth_uri: str = "https://accounts.google.com/o/oauth2/auth"
+    token_uri: str = "https://oauth2.googleapis.com/token"
+    auth_provider_x509_cert_url: str = "https://www.googleapis.com/oauth2/v1/certs"
     client_x509_cert_url: str
 
 
