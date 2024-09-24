@@ -2,9 +2,9 @@
 
 from importlib.util import find_spec
 
-from .business_core import BusinessCore
 from ._duckdb import DuckDB
 from ._trino import Trino
+from .business_core import BusinessCore
 from .cloud_for_customers import CloudForCustomers
 from .epicor import Epicor
 from .exchange_rates import ExchangeRates
